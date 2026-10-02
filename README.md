@@ -4,6 +4,8 @@
 
 A production-style REST API for user management with JWT authentication, role-based access control, input validation and a full automated test suite.
 
+**Live API:** https://fa-code-api.vercel.app (deployed on Vercel with a Neon PostgreSQL database), e.g. [`/api/health`](https://fa-code-api.vercel.app/api/health)
+
 ## Features
 
 - 🔐 **JWT authentication**: register, login and a `/me` endpoint
