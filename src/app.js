@@ -16,6 +16,14 @@ function createApp({ db, jwtSecret, jwtExpiresIn = '1h', corsOrigin = '*' }) {
   app.use(cors({ origin: corsOrigin }));
   app.use(express.json({ limit: '100kb' }));
 
+  app.get('/', (req, res) => {
+    res.json({
+      name: 'FA Code REST API',
+      docs: 'https://github.com/fa-cod3/api-rest',
+      endpoints: ['/api/health', '/api/auth/register', '/api/auth/login', '/api/auth/me', '/api/users'],
+    });
+  });
+
   app.get('/api/health', async (req, res) => {
     await db.query('SELECT 1');
     res.json({ status: 'ok' });
